@@ -45,12 +45,13 @@ publicity/
 |---|---|
 | **Ghosts** | Fewest clicks and conversions — they barely engage |
 | **Whales** | Highest spend; convert a lot from few impressions |
-| **Browsers** | Most clicks, but low conversions and the lowest spend |
+| **Window Shoppers** | Most clicks, but low conversions and the lowest spend |
 | **Core Buyers** | Most impressions and the highest conversions, solid spend |
 
 ## Key results
 
 - **Data cleaning:** 550 dirty rows → 499 clean rows with no missing values and consistent categories.
+- **SQL exploration:** data quality issues were identified with plain SQL queries before any pandas transformation
 - **Classification:** the refined Random Forest (4 behavioural features: conversions, impressions, clicks, monthly spend) reaches **91 % accuracy**, versus 87 % for the baseline model using all features.
 - Ghosts are detected with a **recall of 1.00**, so no marketing budget is wasted on customers who won't engage.
 
@@ -64,3 +65,5 @@ jupyter notebook notebooks/
 ```
 
 Run the notebooks in order (`01` → `06`). Each notebook reads the output of the previous one, using paths relative to the `notebooks/` folder.
+
+Note: the database is generated synthetically in notebook 01 to simulate real-world advertising data with intentional quality issues. No external dataset is required.
